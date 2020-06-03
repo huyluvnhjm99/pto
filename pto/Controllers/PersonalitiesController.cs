@@ -12,44 +12,44 @@ using pto.Models;
 
 namespace pto.Controllers
 {
-    public class QuestionsController : ApiController
+    public class PersonalitiesController : ApiController
     {
         private ptoEntities db = new ptoEntities();
 
-        // GET: api/questions
-        public IQueryable<question> Getquestions()
+        // GET: api/Personalities
+        public IQueryable<personality> Getpersonalities()
         {
-            return db.questions;
+            return db.personalities;
         }
 
-        // GET: api/questions/5
-        [ResponseType(typeof(question))]
-        public IHttpActionResult Getquestion(int id)
+        // GET: api/Personalities/5
+        [ResponseType(typeof(personality))]
+        public IHttpActionResult Getpersonality(int id)
         {
-            question question = db.questions.Find(id);
-            if (question == null)
+            personality personality = db.personalities.Find(id);
+            if (personality == null)
             {
                 return NotFound();
             }
 
-            return Ok(question);
+            return Ok(personality);
         }
 
-        // PUT: api/questions/5
+        // PUT: api/Personalities/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult Putquestion(int id, question question)
+        public IHttpActionResult Putpersonality(int id, personality personality)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != question.id)
+            if (id != personality.id)
             {
                 return BadRequest();
             }
 
-            db.Entry(question).State = EntityState.Modified;
+            db.Entry(personality).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace pto.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!questionExists(id))
+                if (!personalityExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace pto.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/questions
-        [ResponseType(typeof(question))]
-        public IHttpActionResult Postquestion(question question)
+        // POST: api/Personalities
+        [ResponseType(typeof(personality))]
+        public IHttpActionResult Postpersonality(personality personality)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.questions.Add(question);
+            db.personalities.Add(personality);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = question.id }, question);
+            return CreatedAtRoute("DefaultApi", new { id = personality.id }, personality);
         }
 
-        // DELETE: api/questions/5
-        [ResponseType(typeof(question))]
-        public IHttpActionResult Deletequestion(int id)
+        // DELETE: api/Personalities/5
+        [ResponseType(typeof(personality))]
+        public IHttpActionResult Deletepersonality(int id)
         {
-            question question = db.questions.Find(id);
-            if (question == null)
+            personality personality = db.personalities.Find(id);
+            if (personality == null)
             {
                 return NotFound();
             }
 
-            db.questions.Remove(question);
+            db.personalities.Remove(personality);
             db.SaveChanges();
 
-            return Ok(question);
+            return Ok(personality);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,9 +110,9 @@ namespace pto.Controllers
             base.Dispose(disposing);
         }
 
-        private bool questionExists(int id)
+        private bool personalityExists(int id)
         {
-            return db.questions.Count(e => e.id == id) > 0;
+            return db.personalities.Count(e => e.id == id) > 0;
         }
     }
 }

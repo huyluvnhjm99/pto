@@ -87,3 +87,6 @@ E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\obj\Debug
 E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\obj\Debug\pto.csproj.CopyComplete
 E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\obj\Debug\pto.dll
 E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\obj\Debug\pto.pdb
+E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\bin\Swashbuckle.Core.dll
+E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\bin\WebActivatorEx.dll
+E:\A Study\Semester_7-After_OJT\SWD391 - Software Architecture\PTO\pto\bin\pto.xml
