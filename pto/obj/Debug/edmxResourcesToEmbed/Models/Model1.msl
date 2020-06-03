@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ptoModelStoreContainer" CdmEntityContainer="ptoEntities">
+    <EntitySetMapping Name="answers">
+      <EntityTypeMapping TypeName="ptoModel.answer">
+        <MappingFragment StoreEntitySet="answer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="answer_content" ColumnName="answer_content" />
+          <ScalarProperty Name="question_id" ColumnName="question_id" />
+          <ScalarProperty Name="personality_id" ColumnName="personality_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personalities">
+      <EntityTypeMapping TypeName="ptoModel.personality">
+        <MappingFragment StoreEntitySet="personality">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personality_test">
+      <EntityTypeMapping TypeName="ptoModel.personality_test">
+        <MappingFragment StoreEntitySet="personality_test">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="ptoModel.question">
+        <MappingFragment StoreEntitySet="question">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="question_content" ColumnName="question_content" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_result">
+      <EntityTypeMapping TypeName="ptoModel.test_result">
+        <MappingFragment StoreEntitySet="test_result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="personality_id" ColumnName="personality_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="ptoModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gmail" ColumnName="gmail" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_answer">
+      <EntityTypeMapping TypeName="ptoModel.user_answer">
+        <MappingFragment StoreEntitySet="user_answer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="result_id" ColumnName="result_id" />
+          <ScalarProperty Name="question_id" ColumnName="question_id" />
+          <ScalarProperty Name="answer_id" ColumnName="answer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
