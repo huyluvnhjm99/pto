@@ -85,6 +85,21 @@ namespace pto.Controllers
             return CreatedAtRoute("DefaultApi", new { id = question.id }, question);
         }
 
+        public IHttpActionResult Postquestion(string question_content, int test_id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            question question = new question();
+            question.test_id = test_id;
+            question.question_content = question_content;
+            db.questions.Add(question);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = question.id }, question);
+        }
+
         // DELETE: api/questions/5
         [ResponseType(typeof(question))]
         public IHttpActionResult Deletequestion(int id)
